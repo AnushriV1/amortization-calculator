@@ -22,7 +22,7 @@ A React-based web application for calculating loan amortization schedules with a
 
 1.Clone the repository
 
-git clone https://github.com/your-username/amortization-calculator.git
+git clone https://github.com/AnushriV1/amortization-calculator.git
 
 2.Navigate to the project directory
 
