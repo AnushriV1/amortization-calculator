@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# Loan Amortization Calculator
+A React-based web application for calculating loan amortization schedules with a clean, responsive user interface.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Features
 
-## Available Scripts
+### -Loan Input Form : Enter principal amount, annual interest rate, and loan term in years
+### -Real-time Calculation : Instantly calculate monthly payments and generate amortization schedules
+### -Detailed Summary : View key loan details including monthly payment, total interest, and total cost
+### -Complete Amortization Schedule : See a breakdown of every payment over the life of the loan
+### -Paginated Results : Navigate through the payment schedule with an intuitive pagination system
+### -Responsive Design : Optimized for both desktop and mobile devices
+### -Input Validation : Form validation ensures accurate calculations
 
-In the project directory, you can run:
+## Installation and Setup
+
+### Prerequisites
+
+#### Node.js (v14.0.0 or later)
+#### npm (v6.0.0 or later)
+
+### Steps to Run Locally
+
+1.Clone the repository
+
+git clone https://github.com/your-username/amortization-calculator.git
+
+2.Navigate to the project directory
+
+cd amortization-calculator
+
+3.Install dependencies
+
+### `npm install`
+
+4.Start the development server
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+5.Open your browser and visit http://localhost:3000
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## How It Works
+The application uses the standard amortization formula to calculate loan payments:
 
-### `npm test`
+### Monthly Payment = P × r × (1 + r)^n / ((1 + r)^n - 1)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Where:
 
-### `npm run build`
+P = Principal loan amount
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+r = Monthly interest rate (annual rate divided by 12)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+n = Total number of payments (years × 12)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+For each payment period, the application calculates:
 
-### `npm run eject`
+Interest payment = Remaining balance × monthly interest rate
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Principal payment = Monthly payment - interest payment
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Remaining balance = Previous balance - principal payment
